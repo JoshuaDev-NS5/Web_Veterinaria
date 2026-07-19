@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    overflow: hidden;
+}
+
+#bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(2, 51, 37, 0.72), rgba(2, 51, 37, 0.26) 48%, rgba(0, 0, 0, 0.18));
+    z-index: -1;
+}
+
+.login-shell {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 8vw;
+}
+
+.formulario {
+    width: min(440px, 92vw);
+    background: rgba(7, 24, 20, 0.76);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+    padding: 30px 36px 34px;
+    backdrop-filter: blur(8px);
+}
+
+.login-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.login-brand img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.brand-name {
+    display: block;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1;
+}
+
+.brand-subtitle {
+    display: block;
+    color: #9be6c5;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.login-heading {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    margin-bottom: 30px;
+    padding-bottom: 22px;
+}
+
+.login-heading h1 {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.login-heading p {
+    color: #d7f3e8;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    margin: 10px 0 0;
+}
+
+.formulario form {
+    margin: 0;
+}
+
+.username {
+    position: relative;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.34);
+    margin: 0 0 32px;
+}
+
+.username input {
+    width: 100%;
+    height: 42px;
+    padding: 0 4px;
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+}
+
+.username label {
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    color: #e8f7f0;
+    transform: translateY(-50%);
+    font-size: 0.98rem;
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+
+.username input:focus ~ label,
+.username input:not(:placeholder-shown) ~ label {
+    top: -8px;
+    color: #67fbec;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.username:focus-within {
+    border-bottom-color: #67fbec;
+}
+
+.login-submit {
+    width: 100%;
+    height: 52px;
+    border: 1px solid rgba(255, 255, 255, 0.82);
+    background: #047248;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 800;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 10px 24px rgba(4, 114, 72, 0.28);
+}
+
+.login-submit:hover {
+    background: #058556;
+}
+
+@media (max-width: 780px) {
+    .login-shell {
+        justify-content: center;
+        padding: 28px 18px;
+    }
+
+    .formulario {
+        padding: 26px 24px 30px;
+    }
+}
+
+.login-error {
+    color: #ffd6d6;
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    min-height: 22px;
+    margin: -12px 0 16px;
+}

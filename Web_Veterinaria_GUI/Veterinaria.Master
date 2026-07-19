@@ -1,0 +1,152 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Veterinaria.master.cs" Inherits="Veterinaria.Veterinaria" %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <script src="https://kit.fontawesome.com/748344fffa.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link href="/CSS/DemoCSS.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="Cabecera" runat="server" />
+
+    <script>
+        window.addEventListener('pageshow', function (event) {
+            if (event.persisted) {
+                // La página vino del bfcache: forzamos recarga real al servidor para evitar la pagina de inicio guardada en cache
+                window.location.reload();
+            }
+        });
+</script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <nav id="navbar-top">
+            <div id="navbar-left">
+                <button id="btn-hamburguesa" type="button" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <a id="navbar-brand" href="/Inicio.aspx" aria-label="Ir al inicio">
+                    <img src="/imagenes/modern-animal-pet-logo-template-free-vector-Photoroom.png" alt="logo INUPETS" />
+                    <span>INUPETS</span>
+                </a>
+            </div>
+
+        </nav>
+
+        <div id="overlay-mobile"></div>
+        
+        <div id="sidebar-mobile">
+            <div id="sidebar-mobile-header">
+                <span><asp:Label ID="lblUsuario" runat="server" Text="Label">Hola, Usuario!</asp:Label></span>
+                <button id="btn-cerrar-mobile" type="button"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <ul id="sidebar-mobile-links">
+                <li><a href="/Inicio.aspx"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li>
+                    <button class="sidebar-toggle-submenu" type="button">
+                        <i class="fa-solid fa-book-open"></i> Consultas <i class="fa-solid fa-chevron-right fa-xs ms-auto"></i>
+                    </button>
+                    <ul class="sidebar-submenu">
+                        <li><a runat="server" href="~/Consultas/consVeterinario.aspx"><i class="fa-solid fa-stethoscope"></i> Veterinarios</a></li>
+                        <li><a runat="server" href="~/Consultas/Historial_de_Mascota.aspx"><i class="fa-solid fa-paw"></i> Historial de Mascotas</a></li>
+                        <li><a runat="server" href="~/Consultas/ListaPersonal.aspx"><i class="fa-solid fa-user-tie"></i> Lista del Personal</a></li>
+                        <li><a runat="server" href="~/Consultas/Descargas.aspx"><i class="fa-solid fa-download"></i> Descargas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="sidebar-toggle-submenu" type="button">
+                        <i class="fa-solid fa-calendar-check"></i> Transacción <i class="fa-solid fa-chevron-right fa-xs ms-auto"></i>
+                    </button>
+                    <ul class="sidebar-submenu">
+                        <li><a runat="server" href="~/Transacciones/Cita.aspx"><i class="fa-solid fa-calendar-plus"></i> Registrar cita</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-divider"></li>
+                <li><a runat="server" href="~/Logout.aspx" class="sidebar-cerrar"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a></li>
+                
+               
+            </ul>
+
+
+        </div>
+
+        <div id="contenido-principal">
+            <asp:ContentPlaceHolder ID="Contenido_De_consulta" runat="server" />
+        </div>
+        <footer class="site-footer">
+            <div class="footer-simple-inner">
+                <span>&copy; 2026 INUPETS</span>
+                <span>Cuidado y consultas veterinarias</span>
+            </div>
+        </footer>
+
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        (function () {
+            var btnHamb = document.getElementById('btn-hamburguesa');
+            var btnCerrar = document.getElementById('btn-cerrar-mobile');
+            var overlay = document.getElementById('overlay-mobile');
+            var sidebar = document.getElementById('sidebar-mobile');
+
+            function abrirMenu() { sidebar.classList.add('open'); overlay.classList.add('show'); }
+            function cerrarMenu() { sidebar.classList.remove('open'); overlay.classList.remove('show'); }
+
+            btnHamb.addEventListener('click', abrirMenu);
+            btnCerrar.addEventListener('click', cerrarMenu);
+            overlay.addEventListener('click', cerrarMenu);
+
+            document.querySelectorAll('.sidebar-toggle-submenu').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var sub = this.nextElementSibling;
+                    var icon = this.querySelector('.fa-chevron-right');
+                    sub.classList.toggle('open');
+                    if (icon) icon.style.transform = sub.classList.contains('open') ? 'rotate(90deg)' : '';
+                });
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        // Tiempo de inactividad en milisegundos (60 segundos =60000 ms)
+        const tiempoInactividad = 60000;
+        let temporizador;
+
+        function ReiniciarTemporizador() {
+            // Limpiamos el temporizador anterior cada vez que el usuario hace algo
+            clearTimeout(temporizador);
+
+            // Iniciamos la cuenta regresiva de 55 segundos
+            temporizador = setTimeout(CerrarSesionPorInactividad, tiempoInactividad);
+        }
+
+        function CerrarSesionPorInactividad() {
+            // Redirige al archivo Logout.aspx 
+            window.location.href = '<%= ResolveUrl("~/Logout.aspx") %>';
+        }
+
+        // Escuchamos los movimientos del usuario para saber si está activo en la página
+        window.onload = ReiniciarTemporizador;
+        window.onmousemove = ReiniciarTemporizador;
+        window.onkeypress = ReiniciarTemporizador;
+        window.onclick = ReiniciarTemporizador;
+        window.onscroll = ReiniciarTemporizador;
+
+        // SOPORTE PARA AJAX / POSTBACKS:
+        // Si usas UpdatePanel o llamadas asíncronas de ASP.NET, esto reiniciará el JS
+        if (typeof (Sys) !== 'undefined') {
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(IniciarTemporizadorSeguro);
+        }
+    </script>  
+</body>
+</html>
+
+
+
+
+

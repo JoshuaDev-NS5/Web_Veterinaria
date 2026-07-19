@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cee90a1758054dfca0fd69be0826c928" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.TB_CARGO" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.TB_CITA" Width="1.5" PointX="7.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.TB_CLIENTE" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.TB_ESTADO" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.TB_HORARIO" Width="1.5" PointX="3" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.TB_MASCOTA" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.TB_MEDICAMENTO" Width="1.5" PointX="3" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.TB_PERSONAL" Width="1.5" PointX="5.25" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.TB_RAZA" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.TB_TIPO_CITA" Width="1.5" PointX="5.25" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.TB_TIPO_MASCOTA" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.TB_TRAT_CITA" Width="1.5" PointX="5.25" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.TB_UBIGEO" Width="1.5" PointX="3" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.Tb_Usuario" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.TB_VACUNA" Width="1.5" PointX="3" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.TB_VETERINARIO" Width="1.5" PointX="5.25" PointY="30.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.VW_CITAS_COMPLETA" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.VW_CITAS_POR_VETERINARIO" Width="1.875" PointX="2.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.VW_VETERINARIOS_ACTIVOS" Width="1.75" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.VW_Vista_Mascotas" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.VW_VistaClientes" Width="1.5" PointX="5.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.VW_VistaMedicamentos" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.VW_VistaPersonal" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.VW_VistaTratamientos" Width="1.5" PointX="11.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.VW_VistaVacunas" Width="1.5" PointX="11.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISTEM_VETERINARIAModel.VW_VistaVeterinarios" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="SISTEM_VETERINARIAModel.FK_PERSONAL_CARGO" ManuallyRouted="false" />
+        <AssociationConnector Association="SISTEM_VETERINARIAModel.FK_CITA_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="SISTEM_VETERINARIAModel.FK_CITA_MASCOTA" ManuallyRouted="false" />
+        <AssociationConnector Association="SISTEM_VETERINARIAModel.FK_CITA_PERSONAL" ManuallyRouted="false" />
+        <AssociationConnector Association="SISTEM_VETERINARIAModel.FK_CITA_TIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="SISTEM_VETERINARIAModel.FK_CITA_TRATAMIENTO" ManuallyRouted="false" />
+        <AssociationConnector Association="SISTEM_VETERINARIAModel.FK_CITA_VETERINARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="SISTEM_VETERINARIAModel.FK_MASCOTA_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="SISTEM_VETERINARIAModel.FK_MASCOTA_ESTADO" ManuallyRouted="false" />
+        <AssociationConnector Association="SISTEM_VETERINARIAModel.FK_PERSONAL_HORARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="SISTEM_VETERINARIAModel.FK_MASCOTA_RAZAS" ManuallyRouted="false" />
+        <AssociationConnector Association="SISTEM_VETERINARIAModel.FK_MASCOTA_TIPO_MASCOTA" ManuallyRouted="false" />
+        <AssociationConnector Association="SISTEM_VETERINARIAModel.FK_PRESCRIPCION_MEDICAMENTO" ManuallyRouted="false" />
+        <AssociationConnector Association="SISTEM_VETERINARIAModel.FK_PERSONAL_UBIGEO" ManuallyRouted="false" />
+        <AssociationConnector Association="SISTEM_VETERINARIAModel.FK_TB_RAZA_TB_TIPO_MASCOTA" ManuallyRouted="false" />
+        <AssociationConnector Association="SISTEM_VETERINARIAModel.FK_DETALLE_VACUNA" ManuallyRouted="false" />
+        <AssociationConnector Association="SISTEM_VETERINARIAModel.FK_VETERINARIO_UBIGEO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

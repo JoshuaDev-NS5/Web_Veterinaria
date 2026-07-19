@@ -1,0 +1,372 @@
+/* ==========================================================================
+   Cita.aspx - Estilos (tema verde/blanco de INUPETS)
+   ========================================================================== */
+
+.cita-page {
+    padding: 32px 40px;
+    background: #f8f9fa;
+    min-height: calc(100vh - 64px - 150px);
+}
+
+/* ---------- Encabezado ---------- */
+.cita-page-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.cita-icon-header {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #075f40 0%, #047248 60%, #0a8b5e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.cita-page-header h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #10231c;
+    margin: 0;
+}
+
+.cita-page-header p {
+    font-size: 0.88rem;
+    color: #5d6f68;
+    margin: 2px 0 0;
+}
+
+/* ---------- Tarjeta del formulario ---------- */
+.cita-form-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(4, 114, 72, 0.08);
+    border-top: 4px solid #047248;
+    padding: 26px 28px 22px;
+    margin-bottom: 28px;
+}
+
+.cita-section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #10231c;
+    margin-bottom: 18px;
+}
+
+    .cita-section-title i {
+        color: #047248;
+    }
+
+.cita-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 18px 22px;
+}
+
+.cita-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.cita-field-full {
+    grid-column: 1 / -1;
+}
+
+.cita-field label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #495057;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+    .cita-field label i {
+        color: #047248;
+        font-size: 0.85rem;
+    }
+
+/* Inputs, selects y textareas */
+.cita-input,
+.cita-select {
+    border: 1.5px solid #dee2e6;
+    border-radius: 8px;
+    padding: 9px 12px;
+    font-size: 0.9rem;
+    color: #1a1a1a;
+    background: #f8f9fa;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    height: 42px;
+    width: 100%;
+}
+
+.cita-select {
+    background: #f8f9fa url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%23047248'/></svg>") no-repeat right 14px center;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 32px;
+    cursor: pointer;
+}
+
+textarea.cita-input {
+    height: auto;
+    min-height: 70px;
+    resize: vertical;
+    padding-top: 10px;
+}
+
+.cita-input:focus,
+.cita-select:focus {
+    border-color: #047248;
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(4,114,72,0.12);
+}
+
+/* ---------- Botones ---------- */
+.cita-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.cita-btn-primary,
+.cita-btn-secondary,
+.cita-btn-cancel {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 22px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    border: none;
+    height: 44px;
+}
+
+.cita-btn-primary {
+    background: #047248;
+    color: #fff;
+    box-shadow: 0 3px 10px rgba(4,114,72,0.25);
+}
+
+    .cita-btn-primary:hover {
+        background: #035c39;
+        color: #fff;
+    }
+
+.cita-btn-secondary {
+    background: #f0fdf4;
+    color: #047248;
+    border: 2px solid #047248;
+}
+
+    .cita-btn-secondary:hover {
+        background: #e8f5ee;
+    }
+
+.cita-btn-cancel {
+    background: #f8f9fa;
+    color: #6c757d;
+    border: 1.5px solid #dee2e6;
+}
+
+    .cita-btn-cancel:hover {
+        background: #e9ecef;
+        color: #495057;
+    }
+
+/* ---------- Fondo oscuro del ModalPopupExtender ---------- */
+.cita-modal-fondo {
+    background: #10231c;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+}
+
+/* ---------- Modal: Registrar tratamiento ---------- */
+.cita-modal-panel {
+    background: #fff;
+    border-radius: 16px;
+    width: 560px;
+    max-width: 92vw;
+    max-height: 88vh;
+    overflow-y: auto;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+
+.cita-modal-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 24px;
+    background: linear-gradient(135deg, #075f40 0%, #047248 100%);
+    border-radius: 16px 16px 0 0;
+    position: sticky;
+    top: 0;
+}
+
+    .cita-modal-header i.cita-modal-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.18);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        flex-shrink: 0;
+    }
+
+    .cita-modal-header h3 {
+        margin: 0;
+        color: #fff;
+        font-size: 1.05rem;
+        font-weight: 700;
+    }
+
+    .cita-modal-header p {
+        margin: 2px 0 0;
+        color: #d8f3e5;
+        font-size: 0.78rem;
+    }
+
+.cita-modal-close {
+    margin-left: auto;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+    .cita-modal-close:hover {
+        background: rgba(255,255,255,0.3);
+    }
+
+.cita-modal-body {
+    padding: 22px 24px 6px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px 20px;
+}
+
+.cita-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 18px 24px 22px;
+}
+
+/* ---------- Modal: Cita registrada con exito ---------- */
+.cita-exito-panel {
+    background: #fff;
+    border-radius: 16px;
+    width: 380px;
+    max-width: 90vw;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+    text-align: center;
+    padding: 34px 28px 28px;
+}
+
+.cita-exito-icono {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: #e8f5ee;
+    color: #047248;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 16px;
+}
+
+.cita-exito-panel h3 {
+    color: #10231c;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 6px;
+}
+
+.cita-exito-panel p {
+    color: #5d6f68;
+    font-size: 0.88rem;
+    margin: 0 0 22px;
+}
+
+.cita-exito-panel .cita-btn-primary {
+    width: 100%;
+    justify-content: center;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .cita-page {
+        padding: 20px 16px;
+    }
+
+    .cita-form-card {
+        padding: 20px 18px 18px;
+    }
+
+    .cita-actions {
+        justify-content: stretch;
+    }
+
+        .cita-actions .cita-btn-primary,
+        .cita-actions .cita-btn-secondary {
+            flex: 1;
+            justify-content: center;
+        }
+}
+
+@media (max-width: 560px) {
+    .cita-form-grid,
+    .cita-modal-body {
+        grid-template-columns: 1fr;
+    }
+
+    .cita-page-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .cita-modal-header {
+        padding: 16px 18px;
+    }
+
+    .cita-modal-body {
+        padding: 18px 18px 4px;
+    }
+
+    .cita-modal-footer {
+        padding: 14px 18px 18px;
+        flex-direction: column-reverse;
+    }
+
+        .cita-modal-footer button {
+            width: 100%;
+            justify-content: center;
+        }
+}
